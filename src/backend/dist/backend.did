@@ -1,0 +1,44 @@
+type PagedColleges = 
+ record {
+   colleges: vec College;
+   page: nat;
+   pageSize: nat;
+   total: nat;
+ };
+type CollegeId = nat;
+type CollegeFilter = 
+ record {
+   location: opt text;
+   maxFees: opt nat;
+   minFees: opt nat;
+   page: nat;
+   pageSize: nat;
+   search: opt text;
+ };
+type College = 
+ record {
+   courses: vec text;
+   description: text;
+   established: nat;
+   fees: nat;
+   id: CollegeId;
+   location: text;
+   name: text;
+   placement_percentage: float64;
+   rating: float64;
+   "type": text;
+ };
+service : {
+  getCollege: (id: nat) -> (opt College) query;
+  getColleges: (filter: CollegeFilter) -> (PagedColleges) query;
+  getLocations: () -> (vec text) query;
+  getSavedColleges: () -> (vec College) query;
+  saveCollege: (collegeId: nat) -> (variant {
+                                      err: text;
+                                      ok;
+                                    });
+  unsaveCollege: (collegeId: nat) -> (variant {
+                                        err: text;
+                                        ok;
+                                      });
+}

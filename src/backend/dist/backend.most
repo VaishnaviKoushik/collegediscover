@@ -1,0 +1,50 @@
+// Version: 1.0.0
+type CollegeId__188158614 = CollegeId__344024654;
+type CollegeId__344024654 = Nat;
+type College__381520305 =
+  {
+    courses : [Text];
+    description : Text;
+    established : Nat;
+    fees : Nat;
+    id : CollegeId__188158614;
+    location : Text;
+    name : Text;
+    placement_percentage : Float;
+    rating : Float;
+    type_ : Text
+  };
+type Data__791452850<K, V> =
+  {var count : Nat__490723111; kvs : [var ?(K, V)]};
+type Internal__8484328<K, V> =
+  {children : [var ?Node__46230540<K, V>]; data : Data__791452850<K, V>};
+type Leaf__809889148<K, V> = {data : Data__791452850<K, V>};
+type List__415060402<T> = List__790383201<T>;
+type List__790383201<T> =
+  {
+    var blockIndex : Nat__490723111;
+    var blocks : [var [var ?T]];
+    var elementIndex : Nat__490723111
+  };
+type Nat__490723111 = Nat__920180692;
+type Nat__920180692 = Nat;
+type Node__46230540<K, V> =
+  {#internal : Internal__8484328<K, V>; #leaf : Leaf__809889148<K, V>};
+actor {
+  stable collegeMap :
+    {
+      var root : Node__46230540<Nat, College__381520305>;
+      var size : Nat__490723111
+    };
+  stable colleges :
+    {
+      var blockIndex : Nat__490723111;
+      var blocks : [var [var ?College__381520305]];
+      var elementIndex : Nat__490723111
+    };
+  stable savedMap :
+    {
+      var root : Node__46230540<Principal, List__415060402<Nat>>;
+      var size : Nat__490723111
+    }
+};

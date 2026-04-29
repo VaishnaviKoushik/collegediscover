@@ -1,0 +1,19 @@
+{
+  "overview": "A college discovery platform where students can browse, search, and compare colleges side-by-side, save their favorites, and explore detailed information about each institution.",
+  "features": [
+    "Browse and search 50+ colleges by name, location, and fees",
+    "Compare 2-3 colleges side-by-side with a detailed table",
+    "Full college detail pages with courses, placements, and reviews",
+    "Save favorite colleges with Internet Identity authentication",
+    "Responsive design with loading skeletons and empty states"
+  ],
+  "category": "education",
+  "tags": [
+    "college",
+    "education",
+    "search",
+    "compare",
+    "discovery"
+  ],
+  "last_updated": "2026-04-28T13:57:57.812Z"
+}
